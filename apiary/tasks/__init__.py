@@ -4,7 +4,7 @@ baseclass for tasks
 # pylint: disable=C0301
 
 from celery.task import Task
-from apiary.connect import bumble_bee, bumble_bee_token, audit_bee, audit_bee_token, apiary_db, redis_db
+from apiary.connect import bumble_bee, bumble_bee_token, audit_bee, audit_bee_token, mwracer_bee, mwracer_bee_token, apiary_db, redis_db
 from apiary.celery import app
 import logging
 import datetime
@@ -18,6 +18,8 @@ class BaseApiaryTask(Task):
     bumble_bee_token = None
     audit_bee = None
     audit_bee_token = None
+    mwracer_bee = None
+    mwracer_bee_token = None
     apiary_db = None
     redis_db = None
 
@@ -129,5 +131,7 @@ class BaseApiaryTask(Task):
         self.bumble_bee_token = bumble_bee_token
         self.audit_bee = audit_bee
         self.audit_bee_token = audit_bee_token
+        self.mwracer_bee = mwracer_bee
+        self.mwracer_bee_token = mwracer_bee_token
         self.apiary_db = apiary_db
         self.redis_db = redis_db
