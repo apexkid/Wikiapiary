@@ -26,7 +26,7 @@ class MwTask(BaseApiaryTask):
                     'query': ''.join([
                         "[[Category:Reviews]]",
                         "[[Has item::%s]]" % extension_name,
-                        "|?%s|format=average", % property
+                        "|?%s|format=average" % property
                         ])
                     })
                 rating = ((wiki_return['query']['results']).values()[0])['printouts'][property]
